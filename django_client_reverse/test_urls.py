@@ -1,4 +1,4 @@
-from django.conf.urls import include, url
+from django.conf.urls import url
 from django_client_reverse.views import Reverser
 
 urlpatterns = [

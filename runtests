@@ -4,4 +4,7 @@ set -e
 
 export IN_URL_TEST=true
 
-manage.py test $@
+coverage run --source=django_client_reverse manage.py test $@
+flake8 django_client_reverse --ignore=E128,E501,E401
+coverage html
+coverage report
