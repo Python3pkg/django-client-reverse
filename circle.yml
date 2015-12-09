@@ -7,7 +7,7 @@ machine:
 
 dependencies:
   pre:
-    - ./build
+    - ./runbuild
   cache_directories:
     - env
 
