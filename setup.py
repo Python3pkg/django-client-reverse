@@ -11,7 +11,7 @@ import sys
 name = 'django-client-reverse'
 package = 'django_client_reverse'
 description = 'Django module to access URL reversing client-side'
-url = 'https://github.com/RealOrangeOne/'
+url = 'https://github.com/RealOrangeOne/django-client-reverse'
 author = 'TheOrangeOne'
 author_email = 'git@theorangeone.net'
 license = 'BSD'
