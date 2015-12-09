@@ -1,0 +1,16 @@
+machine:
+  python:
+    version: 3.4.2
+  environment:
+    DEBUG: true
+    IN_URL_TEST: true
+
+dependencies:
+  pre:
+    - ./build
+  cache_directories:
+    - env
+
+test:
+  override:
+    - ./runtests
