@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+set -e
+
+export IN_URL_TEST=true
+
+manage.py test $@
