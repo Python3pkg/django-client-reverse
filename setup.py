@@ -9,6 +9,7 @@ except:
 DETAILS = None
 with open('details.json') as file:
     DETAILS = json_load(file)
+
 setup(
     name = DETAILS['name'],
     packages = DETAILS['packages'],
