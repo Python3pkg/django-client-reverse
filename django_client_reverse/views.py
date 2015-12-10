@@ -12,7 +12,11 @@ class Reverser(APIView):
         input_serializer = ReverserInputSerializer(data=request.data)
         input_serializer.is_valid(raise_exception=True)
         try:
-            url = reverse(input_serializer.validated_data['ident'])
-        except NoReverseMatch:
-            return Response(status=404)
+            url = reverse(
+                input_serializer.validated_data['ident'],
+                args=input_serializer.validated_data['args'],
+                kwargs=input_serializer.validated_data['kwargs']
+            )
+        except NoReverseMatch as e:
+            return Response(str(e), status=404)
         return Response(url, 302)
