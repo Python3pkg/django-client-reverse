@@ -21,3 +21,4 @@ setup(
     url = DETAILS['url'],
     license = DETAILS['license'],
     platforms = DETAILS['platforms']
+)
