@@ -14,3 +14,9 @@ dependencies:
 test:
   override:
     - ./scripts/runtests
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./scripts/distribute
