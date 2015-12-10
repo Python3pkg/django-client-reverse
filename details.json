@@ -1,0 +1,11 @@
+{
+	"name": "Django-client-reverse",
+    "packages": ["django_client_reverse"],
+    "version": "0.0.3",
+    "description": "Django module to access URL reversing client-side",
+    "author": "Jake Howard",
+    "author_email": "git@theorangeone.net ",
+    "url": "https://github.com/RealOrangeOne/Django-Client-Reverse",
+    "license": "BSD",
+    "platforms": ["any"]
+}
