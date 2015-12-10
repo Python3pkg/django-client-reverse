@@ -1,6 +1,7 @@
 from rest_framework.test import APITestCase
 from django.core.urlresolvers import reverse
 from uuid import uuid4
+from .test_urls import PASS_TEXT
 
 
 class ReverserTestCase(APITestCase):
@@ -57,3 +58,9 @@ class ReverserTestCase(APITestCase):
             'args': args
         }, format="json")
         self.assertEqual(response.data, reverse('tests:multi', args=args))
+
+    def test_url_valid(self):
+        lookup_response = self.client.post(reverse('reverser'), data={'ident': 'tests:root'})
+        response = self.client.get(lookup_response.data)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, PASS_TEXT)

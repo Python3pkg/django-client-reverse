@@ -1,8 +1,16 @@
 from django.conf.urls import url
-from django_client_reverse.views import Reverser
+from django.http import HttpResponse
+
+
+PASS_TEXT = "PASS"
+
+
+def test_view(request, *args, **kwargs):
+    return HttpResponse(PASS_TEXT)
+
 
 urlpatterns = [
-    url(r'^$', Reverser.as_view(), name="root"),
-    url(r'(?P<uuid>[0-9a-f-]+)/$', Reverser.as_view(), name="uuid"),
-    url(r'(?P<uuid>[0-9a-f-]+)/(?P<pk>[0-9a-f-]+)$', Reverser.as_view(), name="multi")
+    url(r'^$', test_view, name="root"),
+    url(r'(?P<uuid>[0-9a-f-]+)/$', test_view, name="uuid"),
+    url(r'(?P<uuid>[0-9a-f-]+)/(?P<pk>[0-9a-f-]+)$', test_view, name="multi")
 ]
