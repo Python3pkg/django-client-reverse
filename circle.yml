@@ -7,10 +7,10 @@ machine:
 
 dependencies:
   pre:
-    - ./runbuild
+    - ./scripts/build
   cache_directories:
     - env
 
 test:
   override:
-    - ./runtests
+    - ./scripts/runtests
