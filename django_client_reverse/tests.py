@@ -30,3 +30,30 @@ class ReverserTestCase(APITestCase):
             'args': args
         }, format="json")
         self.assertEqual(response.data, reverse('tests:uuid', args=args))
+
+    def test_invalid_kwargs(self):
+        kwargs = {'not_uuid': str(uuid4())}
+        response = self.client.post(reverse('reverser'), data={
+            'ident': 'tests:uuid',
+            'kwargs': kwargs
+        }, format="json")
+        self.assertEqual(response.status_code, 404)
+
+    def test_multi_kwargs(self):
+        kwargs = {
+            'uuid': str(uuid4()),
+            'pk': str(uuid4())
+        }
+        response = self.client.post(reverse('reverser'), data={
+            'ident': 'tests:multi',
+            'kwargs': kwargs
+        }, format="json")
+        self.assertEqual(response.data, reverse('tests:multi', kwargs=kwargs))
+
+    def test_multi_args(self):
+        args = (str(uuid4()), str(uuid4()))
+        response = self.client.post(reverse('reverser'), data={
+            'ident': 'tests:multi',
+            'args': args
+        }, format="json")
+        self.assertEqual(response.data, reverse('tests:multi', args=args))
