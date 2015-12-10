@@ -7,5 +7,5 @@ class ReverserTestCase(APITestCase):
         super().setUp()
 
     def test_thing(self):
-        response = self.client.get(reverse('reverser'))
-        print(response)
+        response = self.client.post(reverse('reverser'), data={'ident': 'tests:root'})
+        self.assertEqual(response.data, '/tests/')
