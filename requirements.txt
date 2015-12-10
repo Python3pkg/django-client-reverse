@@ -3,3 +3,4 @@ Django==1.8.7
 djangorestframework==3.3.1
 dj-database-url==0.3.0
 flake8==2.4.1
+twine==1.6.4
