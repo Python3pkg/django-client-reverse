@@ -4,5 +4,3 @@ set -e
 
 pyvenv-3.4 env
 env/bin/pip install -r requirements.txt --upgrade
-
-python setup.py install
