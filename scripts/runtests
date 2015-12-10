@@ -9,4 +9,5 @@ flake8 django_client_reverse --ignore=E128,E501,E401
 coverage html
 coverage report
 
+python setup.py build sdist
 python setup.py check

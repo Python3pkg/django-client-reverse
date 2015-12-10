@@ -2,8 +2,6 @@
 
 set -eu
 
-[ -z "$CIRCLE_USERNAME" ] && { echo "Must be run on CircleCI."; exit 1;}
-
 echo ">> Building Packages..."
 python setup.py build sdist
 
