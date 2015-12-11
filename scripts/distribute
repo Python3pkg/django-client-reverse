@@ -6,4 +6,4 @@ echo ">> Building Packages..."
 python setup.py build sdist
 
 echo ">> Uploading Packages to PyPi..."
-twine upload dist/* -u TheOrangeOne -p $PYPI_PASSWORD
+twine upload dist/* -u TheOrangeOne
